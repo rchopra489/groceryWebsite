@@ -6,35 +6,12 @@
     <link rel="stylesheet" href="groceryCss.css">
     <title>Grocery</title>
 </head>
-<body onload="getData()">
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-          apiKey: "AIzaSyDU80NecM5U7GROIgDcCXVPd1SqxqT_YGw",
-          authDomain: "grossary-site.firebaseapp.com",
-          databaseURL: "https://grossary-site.firebaseio.com",
-          projectId: "grossary-site",
-          storageBucket: "grossary-site.appspot.com",
-          messagingSenderId: "65731770246",
-          appId: "1:65731770246:web:70aa0553bdb65949529e07"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-       
-        
-
-        //Get product data
-        function getData(){
-          return firebase.database().ref('/').once('value', function(snapshot){
-              snapshot.forEach(function(childSnapshot){
-                  var childKey = childSnapshot.key;
-                  var childData = childSnapshot.val();
-                  document.getElementsByClassName("products").children[0].innerHTML = childData["image"];
-              })
-          });
-      }
-      
-      </script>
+<body>
+    <script src="grocery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>setUp();</script>
     <div id="sticker">Offer: Get 50% Off on your first purchase. T&C apply</div>
     <header>
         <img class="logo" src="logo.png" alt="grocery-logo" height="auto" width="10%"/>
@@ -54,9 +31,9 @@
             <img src="grabGrocery.jpg" alt="offerimg" width="40%" height="auto">
             <div class="form">
                 <h3>Your First Order On Us!</h3>
-            <form action="#">
-                <input type="email" id="user" name="user" placeholder="email">
-                <input type="submit" name="submit" id="submit" value="Grab It!">
+            <form onsubmit="yay()">
+                <input type="email" id="user" name="user" placeholder="email" required>
+                <input type="submit" name="submit" id="submit" value="Grab It!" onsubmit="">
             </form>
             </div>
             <br>
@@ -111,7 +88,7 @@
             </div>
         </section>
         <section id="advantages">
-            <h1>Advantages</h1>
+            <h5>Advantages</h5>
             <div id="adv-1" class="products">
                 <img src="organic.jpg"  alt="adv-1" width="40%" height="auto">
                 <div class="des">
@@ -146,14 +123,5 @@
 (257) 563-7401
         </Address>
     </footer>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-
-
 </body>
 </html>

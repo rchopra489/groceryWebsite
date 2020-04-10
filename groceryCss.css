@@ -1,0 +1,182 @@
+body{
+    background-color: #131212;
+    margin: 0;;
+    color: antiquewhite;
+}
+input{
+    border: none;
+}
+
+header{
+    background: #777;
+}
+.logo{
+    margin: 10px 0 0 20px;
+}
+nav{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    text-align: right;
+    margin: 30px 10px 0 0;
+    margin-right: 10%;
+}
+
+nav ul>li>a{
+    text-decoration: none;
+    display: inline;
+    margin: 10px;
+    font-size: 24px;
+    color: antiquewhite;
+}
+nav ul>li{
+    display: inline;
+}
+
+.cart{
+    position: relative;
+    top: 5px;
+}
+
+#challenge{
+    height: 35em;
+}
+#challenge>h2{
+    font-size: 3em;
+    text-align: center;
+}
+
+.offerCard{
+    text-align: center;
+}
+
+.ending {
+    float: left;
+    width: 25%;
+    margin-left: 20%;
+}
+.solution {
+    float: right;
+    width: 25%;
+    margin-right: 20%;
+}
+.offerCard>h3{
+    font-size: 2em;
+}
+.offerCard>p{
+    font-size: 1.25em;
+}
+
+#offer{
+    text-align: center;
+    margin: 30px;
+}
+
+#offer>img{
+    float: left;
+    border-radius: 15%;
+    margin-top: 50px;
+}
+
+#offer>h2{
+    font-size: 3.5em;
+}
+.form{
+    height: 30em;
+    padding-top: 3em;
+}
+.form>h3{
+    font-size: 3em;
+}
+input[id="user"]{
+    position: relative;
+    width: 30%;
+    height: 40px;
+    background: transparent;
+    border: 1px solid antiquewhite;
+    border-radius: 5px;
+    color: antiquewhite;
+    font-size: 24px;
+    text-align: center;
+    left: 100px;
+}
+input[id="submit"]{
+    position: relative;
+    top: 60px;
+    right:200px;
+    height: 50px;
+    width: 200px;
+    font-size: x-large;
+    font-weight: 700;
+    border-radius: 10px;
+    color: antiquewhite;
+    background-color: #039be5;
+    outline: none;
+}
+
+#products>h1{
+    text-align: center;
+    font-size: 48px;
+}
+
+.products{
+    border: 2px solid antiquewhite;
+    margin: 0 10%;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.des{
+    float: right;
+    text-align: center;
+    width: 50%;
+}
+
+.des>h2{
+    font-size: 36px;
+}
+
+.buyBtn{
+    height: 50px;
+    width: 200px;
+    font-size: x-large;
+    font-weight: 700;
+    border-radius: 10px;
+    color: antiquewhite;
+    background-color: #039be5;
+    outline: none;
+    border: none;
+}
+
+#advantages {
+    margin-top: 100px;
+}
+
+#advantages>h1{
+    text-align: center;
+    font-size: 48px;
+}
+
+img{
+    border-radius: 10px;
+}
+
+footer{
+    background-color: #777;
+    margin-top: 20px;
+    padding: 10px 0 30px 0;
+    text-align: center;
+}
+
+#sticker{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-weight: 700;
+    color: antiquewhite;
+    background-color: #039be5;
+    padding: 5px;
+    text-align: center;
+    z-index: 1;
+}

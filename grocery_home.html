@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="groceryCss.css">
+    <title>Grocery</title>
+</head>
+<body onload="getData()">
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyDU80NecM5U7GROIgDcCXVPd1SqxqT_YGw",
+          authDomain: "grossary-site.firebaseapp.com",
+          databaseURL: "https://grossary-site.firebaseio.com",
+          projectId: "grossary-site",
+          storageBucket: "grossary-site.appspot.com",
+          messagingSenderId: "65731770246",
+          appId: "1:65731770246:web:70aa0553bdb65949529e07"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+       
+        
+
+        //Get product data
+        function getData(){
+          return firebase.database().ref('/').once('value', function(snapshot){
+              snapshot.forEach(function(childSnapshot){
+                  var childKey = childSnapshot.key;
+                  var childData = childSnapshot.val();
+                  document.getElementsByClassName("products").children[0].innerHTML = childData["image"];
+              })
+          });
+      }
+      
+      </script>
+    <div id="sticker">Offer: Get 50% Off on your first purchase. T&C apply</div>
+    <header>
+        <img class="logo" src="logo.png" alt="grocery-logo" height="auto" width="10%"/>
+        <nav>
+            <ul class="nav">
+                <li><a href="#challenge">Resolution</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#advantages">Advantages</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><img height="5%" width="5%" class="cart" src="cartIcon.png" alt="cartIcon"/></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="offer">
+            <h2>Your One Stop Shop To Your Grocery Needs</h2>
+            <img src="grabGrocery.jpg" alt="offerimg" width="40%" height="auto">
+            <div class="form">
+                <h3>Your First Order On Us!</h3>
+            <form action="#">
+                <input type="email" id="user" name="user" placeholder="email">
+                <input type="submit" name="submit" id="submit" value="Grab It!">
+            </form>
+            </div>
+            <br>
+        </div>
+        <div id="challenge">
+            <h2 class="offerHead">Challenges</h2>
+                    <div class="offerCard ending">
+                        <h3>The food is ending</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                    <div class="offerCard solution">
+                        <h3>Solution</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+        </div>
+        <section id="products">
+            <h1>Products</h1>
+            <div id="prod-1" class="products">
+                <img src="milk.png" alt="prod-1" width="30%" height="auto">
+                <div class="des">
+                    <h2>Milk</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="buyBtn">Buy</button>
+                </div>
+            </div>
+
+            <div id="prod-2" class="products">
+                <img src="cereal.jpg" alt="prod-2" width="40%" height="auto">
+                <div class="des">
+                    <h2>Cereal</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="buyBtn">Buy</button>
+                </div>
+            </div>
+
+            <div id="prod-3" class="products">
+                <img src="banana.jpg" alt="prod-3" width="30%" height="auto">
+                <div class="des">
+                    <h2>Banana</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="buyBtn">Buy</button>
+                </div>
+            </div>
+
+            <div id="prod-4" class="products">
+                <img src="carrot.png" alt="prod-4" width="30%" height="auto">
+                <div class="des">
+                    <h2>Carrot</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="buyBtn">Buy</button>
+                </div>
+            </div>
+        </section>
+        <section id="advantages">
+            <h1>Advantages</h1>
+            <div id="adv-1" class="products">
+                <img src="organic.jpg"  alt="adv-1" width="40%" height="auto">
+                <div class="des">
+                    <h2>Organic</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+            <div id="adv-2" class="products">
+                <img src="hygeinic.png" alt="adv-2" width="40%" height="auto">
+                <div class="des">
+                    <h2>Hygeinic</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+            <div id="adv-3" class="products">
+                <img src="fresh.jpg" alt="adv-3" width="30%" height="auto">
+                <div class="des">
+                    <h2>Always Fresh</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+            <h2>Contact Us</h2>
+        <p>E-mail: groceryshop@grocery.com</p>
+        <p>Phone No.: +91-9876543210</p>
+        <Address>
+            Cecilia Chapman<br>711-2880 Nulla St.<br>Mankato Mississippi<br>96522
+(257) 563-7401
+        </Address>
+    </footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+
+</body>
+</html>
